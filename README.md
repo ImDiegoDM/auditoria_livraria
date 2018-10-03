@@ -1,66 +1,12 @@
 # Gestão de Livros
-<h3>Livro</h3>
-<ul>
-  <li>GET    /livros</li>
-  <li>POST   /livros</li>
-  <li>PUT    /livros/{idLivro}</li>
-  <li>DELETE /livros/{idLivro}</li>
-  <li>GET    /livros/{idLivro}</li>
-  <li>GET    /livros/{idLivro}/autores</li>
-  <li>GET    /livros/{idLivro}/editoras</li>
-  <li>GET    /livros/{idLivro}/comentarios</li>
-  <li>GET    /livros/p?nome={nome}</li>
-</ul>
+Para garantir a segurança das informações, foi criando um micro serviço para auditar as vendas de livros.
 
-<h3>Autor<h3>
-<ul>
-  <li>GET    /autores</li>
-  <li>POST   /autores</li>
-  <li>PUT    /autores/{idAutor}</li>
-  <li>DELETE /autores/{idAutor}</li>
-  <li>GET    /autores/{idAutor}</li>
-  <li>GET    /autores/{idAutor}/livros</li>
-  <li>GET    /autores/{idAutor}/editoras</li>
-  <li>GET    /autores/p?nome={nome}</li>
-</ul>
+Instalação: Vá para https://github.com/weto/auditoria_livraria e baixe a versão mais recente.
 
-<h3>Editora</h3
-<ul>
-  <li>GET    /editoras</li>
-  <li>POST   /editoras</li>
-  <li>PUT    /editoras/{idEditor}</li>
-  <li>DELETE /editoras/{idEditor}</li>
-  <li>GET    /editoras/{idEditor}</li>
-  <li>GET    /editoras/{idEditor}/livros</li>
-  <li>GET    /editoras/{idEditor}/autores</li>
-  <li>GET    /editoras/p?nome={nome}</li>
-</ul>
+Dependências: Nodejs Lts
 
-<h3>Cliente</h3>
-<ul>
-  <li>GET    /clientes</li>
-  <li>POST   /clientes</li>
-  <li>PUT    /clientes/{idCliente}</li>
-  <li>DELETE /clientes/{idCliente}</li>
-  <li>GET    /clientes/{idCliente}</li>
-  <li>GET    /clientes/{idCliente}/pedidos</li>
-  <li>GET    /clientes/p?nome={nome}</li>
-</ul>
+Construindo o aplicativo: Execute o comando no terminal 'npm install' e 'npm start'.
 
-<h3>Carrinho de Compras</h3>
-<ul>
-  <li>POST   /carrinho/{idLivro}</li>
-  <li>DELETE /carrinho/{idLivro}</li>
-</ul>
-  
-<h3>Pedido</h3>
-<ul>
-  <li>POST /pedidos</li>
-  <li>PUT  /pedidos/{idPedido}</li>
-  <li>GET  /pedidos/{idCliente}</li>
-  <li>GET  /pedidos/{idPedido}/cancelamentos</li>
-  <li>GET  /pedidos/{idPedido}/situacoes</li>
-  <li>GET  /pedidos/p?status={status}&valor={value}</li>
-</ul>
+Quando você terminar de executar o script acima, o microserviço estará disponível no endereço http://localhost:3003/api/v1.
 
-https://app.swaggerhub.com/apis/weto/livros/1.0.0#/
+Acessando a documentação do projeto: http://localhost:3003/api/v1/doc
