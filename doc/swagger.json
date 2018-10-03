@@ -1,0 +1,131 @@
+{
+  "swagger" : "2.0",
+  "info" : {
+    "description" : "",
+    "version" : "1.0.0",
+    "title" : "Micro serviço de auditoria de pagamento de livros",
+    "contact" : {
+      "email" : "weto.jc@gmail.com"
+    },
+    "license" : {
+      "name" : "Apache 2.0",
+      "url" : "http://www.apache.org/licenses/LICENSE-2.0.html"
+    }
+  },
+  "host" : "localhost:3003/",
+  "basePath" : "api/v1/auditorias",
+  "tags" : [ {
+    "name" : "auditoria",
+    "description" : "Chamadas de serviço de auditoria"
+  } ],
+  "schemes" : [ "http" ],
+  "paths" : {
+    "/pedidos/{idPedido}" : {
+      "get" : {
+        "tags" : [ "auditoria" ],
+        "summary" : "listagem da auditoria do pedido",
+        "description" : "Listar auditoria do pedido.\n",
+        "operationId" : "listagemAuditoriaPedido",
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "idPedido",
+          "in" : "path",
+          "description" : "Identificação do Pedido",
+          "required" : true
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Buscar auditoria por pedido.",
+            "schema" : {
+              "type" : "array",
+              "items" : {
+                "$ref" : "#/definitions/Auditoria"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/pedidos" : {
+      "get" : {
+        "tags" : [ "auditoria" ],
+        "summary" : "listagem de todas auditoria realizadas",
+        "description" : "Listar auditoria do pedido.\n",
+        "operationId" : "listagemAuditoria",
+        "produces" : [ "application/json" ],
+        "parameters" : [ ],
+        "responses" : {
+          "200" : {
+            "description" : "Buscar todas auditorias.",
+            "schema" : {
+              "type" : "array",
+              "items" : {
+                "$ref" : "#/definitions/Auditoria"
+              }
+            }
+          }
+        }
+      },
+      "post" : {
+        "tags" : [ "auditoria" ],
+        "summary" : "Auditar o pagamento de um pedido",
+        "description" : "Ao enviar a auditoria, a micro api vai recuperar os dados do \npedido que tem o pré requisito o pedido retornado da api de livraria no seguinte padrão: \nExemplo: \n{\"id\": 2, \"codigo\": \"cod1147852\", \"valor\": \"3.000,00\", \"situacao\": \"Aberto\", \"dataTransacao\": \"03/10/2018 10:00\", \"cliente\": { \"id\": 1, \"nome\": \"Cliente 2\"},\n",
+        "operationId" : "auditarPedido",
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "in" : "body",
+          "name" : "idPedido",
+          "description" : "Identificação do Pedido",
+          "required" : true
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Fazer auditoria por pedido.",
+            "schema" : {
+              "type" : "array",
+              "items" : {
+                "$ref" : "#/definitions/Auditoria"
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "definitions" : {
+    "Auditoria" : {
+      "type" : "object",
+      "required" : [ "dataTransacao", "descricao", "estado", "idPedido", "valorAutorizado" ],
+      "properties" : {
+        "idPedido" : {
+          "type" : "integer",
+          "format" : "uuid",
+          "example" : 1
+        },
+        "descricao" : {
+          "type" : "string",
+          "example" : "José realizou o pedido nº 100 aprovado no dia 30/09/2018 às 19:00 no valor de R$ 5.000,00"
+        },
+        "dataTransacao" : {
+          "type" : "string",
+          "example" : "date-time"
+        },
+        "valorAutorizado" : {
+          "type" : "string",
+          "example" : "float"
+        },
+        "estado" : {
+          "type" : "string",
+          "example" : "autorizado"
+        }
+      },
+      "example" : {
+        "estado" : "autorizado",
+        "idPedido" : 1,
+        "valorAutorizado" : "float",
+        "descricao" : "José realizou o pedido nº 100 aprovado no dia 30/09/2018 às 19:00 no valor de R$ 5.000,00",
+        "dataTransacao" : "date-time"
+      }
+    }
+  }
+}

@@ -1,0 +1,15 @@
+{
+	"versao": "0.0.1",
+	"msg_versao": "VERSÃO ATIVA: VSMAPI {versao}",
+	"msg_started_api": "SERVIDOR INICIADO NA PORTA {port} COM SUCESSO!!!",
+
+	"user": "Usuário",
+	"msg_user_not_exist": "{user} não encontrado.",
+	"field_not_found": "Campo obrigatório não informado",
+
+	"msg_error_alter_model": "Erro ao alterar {name}",
+	"msg_error_search_model": "Erro ao pesquisar Usuário por id!",
+
+	"intern_error_authenticate_user": "Erro interno ao autenticar {user}",
+	"intern_error_search_user": "Erro interno ao pesquisar {user}"
+}
