@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon index.js",
+    "start": "node index.js",
     "tests": "node ./tests/unit/auditoria.test.js | tap-spec"
   },
   "author": "weto.jc@gmail.com",
