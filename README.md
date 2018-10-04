@@ -1,5 +1,5 @@
 # Gestão de Livros
-Para garantir a segurança das informações, foi criando um micro serviço para auditar as vendas de livros.
+Para garantir a autenticidade das transações, foi criando um micro serviço para auditar as vendas de livros.
 
 Instalação: Vá para https://github.com/weto/auditoria_livraria e baixe a versão mais recente.
 
