@@ -13,6 +13,6 @@ app.use('/api/v1/auditorias', auditorias);
 var swaggerUi = require('swagger-ui-express'),
     doc = require('./doc/swagger.json');
 
-app.use('/api/v1/doc', swaggerUi.serve, swaggerUi.setup(doc));
+app.use('/', swaggerUi.serve, swaggerUi.setup(doc));
 
 module.exports = app;
