@@ -9,4 +9,4 @@ Construindo o aplicativo: Execute o comando no terminal 'npm install' e 'npm sta
 
 Quando você terminar de executar o script acima, o microserviço estará disponível no endereço http://localhost:3003/api/v1.
 
-Acessando a documentação do projeto: http://localhost:3003/api/v1/doc
+Acessando a documentação do projeto: http://localhost:3003/
