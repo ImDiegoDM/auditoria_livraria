@@ -13,7 +13,7 @@ exports.findAll = function(pedido) {
 
 exports.findByPedido = function(pedido) {
 	return new Promise(function(resolve, reject) {
-		const auditoriaReturn = pedidos.find(function (pedidoP) { 
+		const auditoriaReturn = pedidos.find(function (pedidoP) {
 			if(pedidoP.idPedido === parseInt(pedido.idPedido)){
 				return pedidoP;
 			}
@@ -29,7 +29,7 @@ exports.findByPedido = function(pedido) {
 }
 
 async function findPedido(pedido) {
-    const pedidoReturn = await axios.get('http://localhost:8080/api/v1/pedidos/'.concat(pedido.idPedido)).then((retorno) => {
+    const pedidoReturn = await axios.get('https://gestao-livro-aula3.herokuapp.com/api/v1/pedidos/'.concat(pedido.idPedido)).then((retorno) => {
         return retorno.data;
 	})
 	return pedidoReturn;
