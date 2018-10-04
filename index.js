@@ -1,6 +1,6 @@
 var i18n = require('./config/i18n')();
 var app = require('./app');
-var port = 3003;
+var port = process.env.PORT || 8080;
 
 i18n.init;
 console.log(i18n.__("versao"));
