@@ -20,7 +20,7 @@
   } ],
   "schemes" : [ "http" ],
   "paths" : {
-    "/pedidos/{idPedido}" : {
+    "/api/v1/pedidos/{idPedido}" : {
       "get" : {
         "tags" : [ "auditoria" ],
         "summary" : "listagem da auditoria do pedido",
@@ -46,7 +46,7 @@
         }
       }
     },
-    "/pedidos" : {
+    "/api/v1/pedidos" : {
       "get" : {
         "tags" : [ "auditoria" ],
         "summary" : "listagem de todas auditoria realizadas",
